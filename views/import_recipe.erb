@@ -1,0 +1,19 @@
+<ul>
+  <% @scrapes.each_with_index do |recipe, i| %>
+    <li>
+      <h4><%= recipe[0] %></h4>
+      <form method="GET" action='/import/<%= i %>' >
+        <input type="hidden" name="name" value='<%= recipe[0] %>'>
+        <input type="hidden" name="prep_time" value='<%= recipe[2] %>'>
+        <input type="hidden" name="difficulty" value='<%= recipe[3] %>'>
+        <input type="hidden" name="description" value='<%= recipe[1] %>'>
+        <input type="submit" value="Choose recipe">
+      </form>
+      <p>
+        Time : <%= recipe[2] %><br>
+        Difficulty : <%= recipe[3] %><br>
+        Description : <%= recipe[1] %>
+      </p>
+    </li>
+  <% end %>
+</ul>

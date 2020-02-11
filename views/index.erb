@@ -1,0 +1,22 @@
+<ul>
+  <% @recipes.each_with_index do |recipe, i| %>
+    <li>
+      <h4>
+        <%= recipe[1] %>
+        <% if recipe[0] %>
+        <span>&#10003;</span>
+        <% end %>
+      </h4>
+      <a href="/delete/<%= i %>">Delete</a>
+      <a href="/markasdone/<%= i %>">Mark as done</a>
+      <p>
+        Time : <%= recipe[2] %><br>
+        Difficulty : <%= recipe[3] %><br>
+        Description : <%= recipe[4] %>
+      </p>
+    </li>
+  <% end %>
+</ul>
+
+<a href="/new">Create a new recipe</a>
+<a href="/import">Import a new recipe</a>
